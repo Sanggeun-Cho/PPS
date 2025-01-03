@@ -3,6 +3,7 @@
         "**/target": true
     },
     "files.associations": {
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "vector": "cpp"
     }
 }
