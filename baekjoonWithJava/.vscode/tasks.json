@@ -2,6 +2,8 @@
     "version": "2.0.0",
     "tasks": [
         {
+            // 한글 주석이 필요할 때 사용하는 빌드입니다
+            // 실행 shifh + ctrl + B
             "label": "javac build (UTF-8)",
             "type": "shell",
             "command": "javac",
