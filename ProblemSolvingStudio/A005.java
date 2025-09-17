@@ -18,16 +18,15 @@ public class A005 {
         }
 
         for(String str : skill_trees){
-            String onlySkillString = "";
+            StringBuilder sb = new StringBuilder(1 >> 20);
 
             for(char c : str.toCharArray()){
-                if(skillString.contains(c)) onlySkillString = onlySkillString + c;
+                if(skillString.contains(c)) sb.append(c);
             }
+            String onlySkillString = sb.toString();
 
             if(onlySkillString.equals(skill.substring(0, onlySkillString.length()))) answer++;
         }
-
-        if(answer == 0) answer = -1;
 
         return answer;
     }

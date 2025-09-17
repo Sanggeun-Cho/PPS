@@ -3,7 +3,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.StringTokenizer;
 
 public class C109 {
@@ -12,9 +14,11 @@ public class C109 {
 
         int N = Integer.parseInt(br.readLine());
         StringTokenizer st = new StringTokenizer(br.readLine());
-        List<Integer> list = new ArrayList<>();
+
+        Map<Integer, Integer> freq = new HashMap<>(N * 2);
         for(int i = 0; i < N; i++) {
-            list.add(Integer.parseInt(st.nextToken()));
+            int v = Integer.parseInt(st.nextToken());
+            freq.merge(v, 1, Integer::sum);
         }
 
         int M = Integer.parseInt(br.readLine());
@@ -22,11 +26,11 @@ public class C109 {
 
         StringBuilder sb = new StringBuilder();
         for(int i = 0; i < M; i++){
-            int count = Collections.frequency(list, Integer.parseInt(st.nextToken()));
+            int q = Integer.parseInt(st.nextToken());
             
-            sb.append(count).append(' ');
+            sb.append(freq.getOrDefault(q,0)).append(' ');
         }
 
-        System.out.println(sb);
+        System.out.println(sb.toString().trim());
     }
 }
