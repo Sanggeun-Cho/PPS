@@ -9,7 +9,6 @@ import java.util.StringTokenizer;
 public class A156 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         int numOfTrees = Integer.parseInt(st.nextToken());
