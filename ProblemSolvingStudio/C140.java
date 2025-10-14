@@ -11,7 +11,7 @@ public class C140 {
     static int N;
 	static int K;
 	
-	static int visited[] = new int[100001];
+	static int dist[] = new int[100001];
 
 	public static void main(String[] args) throws IOException { 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -27,26 +27,25 @@ public class C140 {
 		Queue<Integer> queue = new LinkedList<Integer>();
 		
 		queue.add(node);
-		int index = node;
 		int n = 0;
-		visited[index] = 1;
+		dist[node] = 1;
 		while(queue.isEmpty() == false) {
 			n = queue.poll();
 			
 			if(n == K)	{
-				return visited[n] - 1;
+				return dist[n] - 1;
 			}
-			if(n - 1 >= 0 && visited[n - 1] == 0) {
-				visited[n - 1] = visited[n] + 1;
+			if(n - 1 >= 0 && dist[n - 1] == 0) {
+				dist[n - 1] = dist[n] + 1;
 				queue.add(n - 1);
 			}
-			if(n + 1 < 100001 && visited[n + 1] == 0) {
-				visited[n + 1] = visited[n]+1;
+			if(n + 1 < 100001 && dist[n + 1] == 0) {
+				dist[n + 1] = dist[n]+1;
 				queue.add(n + 1);
 			}
-			if(2 * n < 100001 && visited[2 * n] == 0) {
-				visited[2 * n] = visited[n] + 1;
-				queue.add(2 * n);
+			if(n * 2 < 100001 && dist[n * 2] == 0) {
+				dist[n * 2] = dist[n] + 1;
+				queue.add(n * 2);
 			}
 		}
 
