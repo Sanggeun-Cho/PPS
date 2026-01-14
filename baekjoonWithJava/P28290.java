@@ -12,7 +12,7 @@ public class P28290 {
             System.out.println("in-out");
         } else if(line.equals("asdf;lkj") || line.equals(";lkjasdf")){
             System.out.println("out-in");
-        } else if(line.equals("asdfjkl;;")){
+        } else if(line.equals("asdfjkl;")){
             System.out.println("stairs");
         } else if(line.equals(";lkjfdsa")){
             System.out.println("reverse");
